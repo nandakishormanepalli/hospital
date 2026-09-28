@@ -1,0 +1,200 @@
+/* Dark modern hospital dashboard theme */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(135deg, #0b1220, #1c2540);
+  color: #e9eefc;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  background: rgba(18, 26, 43, 0.95);
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+nav .tab {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  background: #121a2b;
+  border: none;
+  border-radius: 8px;
+  color: #9fb0d0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+nav .tab:hover, nav .tab.active {
+  background: #6ea8fe;
+  color: #fff;
+}
+
+main {
+  padding: 1rem;
+}
+
+.section {
+  margin-top: 1rem;
+  background: #121a2b;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+}
+
+.hidden { display: none; }
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+form input,
+form select,
+form button {
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: none;
+  min-width: 150px;
+  
+}
+form input,
+form select {
+  background: #1c2540;
+  color: grey;
+}
+form input{
+  color:white;
+}
+form select {
+  color: white;
+}
+form select option {
+  background: #1c2540;
+  color: white;
+}
+form button {
+  background: #6ea8fe;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+form button:hover {
+  background: #4d91f5;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+th, td {
+  padding: 0.6rem;
+  text-align: left;
+  border-bottom: 1px solid #333;
+}
+tr:hover { background: rgba(255,255,255,0.05); }
+
+table button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  margin: 0 0.2rem;
+}
+table button:hover {
+  color: #ff6b6b;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #121a2b;
+  margin-top: 2rem;
+}
+
+.stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.card {
+  flex: 1 1 180px;
+  background: #222;
+  color: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  font-size: 1.1rem;
+}
+
+/* Chrome, Edge, Safari autofill fix */
+input:-webkit-autofill,
+select:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0px 1000px rgba(255,255,255,0.05) inset;
+  -webkit-text-fill-color: #ffffff;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* Firefox autofill fix */
+input:-moz-autofill,
+select:-moz-autofill {
+  box-shadow: 0 0 0px 1000px rgba(255,255,255,0.05) inset;
+  -moz-text-fill-color: #ffffff;
+}
+
+/* Optional: remove blue highlight on focus */
+input:focus,
+select:focus {
+  outline: none;
+  border: 1px solid #6ea8fe;
+}
+
+
+/* default: grey placeholder text */
+form select {
+  color: #9aa3b2;        /* grey placeholder color */
+  background: #1c2540;
+  -webkit-appearance: none; /* helps consistent display across browsers */
+  appearance: none;
+}
+
+/* when a valid option is selected, make displayed text white */
+form select:valid {
+  color: white;
+}
+
+/* if you use a class-based JS fallback, this also works */
+form select.has-value {
+  color: #ffffff;
+}
+
+/* style the placeholder option (so the drop-down list shows grey for that item) */
+form select option[value=""] {
+  color: white;
+}
+
+/* ensure other options are readable in dropdown list */
+form select option {
+  color: white; /* color inside dropdown list (may be browser-dependent) */
+}
+
+/* Initially, if select has the placeholder selected */
+select option[disabled][selected] {
+  color: grey;
+}
+
+/* Change text color when a real option is selected */
+select:not(:placeholder-shown) {
+  color: grey;
+}

@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Hospital Management System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <h1>🏥 Hospital Management System</h1>
+    <!-- Navbar -->
+    <nav id="navbar" style="display:none;">
+      <button class="tab" data-target="dashboard">Dashboard</button>
+      <button class="tab" data-target="patients">Patients</button>
+      <button class="tab" data-target="doctors">Doctors</button>
+      <button class="tab" data-target="treatments">Treatments</button>
+      <button class="tab" data-target="billing">Billing</button>
+      <button class="tab" data-target="appointments">Appointments</button>
+    </nav>
+    <!-- Logout button -->
+    <button id="logoutBtn" style="display:none;">Logout</button>
+  </header>
+
+  <!-- Main Sections -->
+  <main>
+    <!-- Login -->
+    <section id="login" class="section active">
+      <h2>🔑 Login</h2>
+      <form id="loginForm">
+        <label>Username:<input type="text" id="username" required></label>
+        <label>Password:<input type="password" id="password" required></label>
+        <button type="submit">Login</button>
+      </form>
+    </section>
+
+    <!-- Dashboard -->
+    <section id="dashboard" class="section hidden">
+      <h2>📊 Dashboard</h2>
+      <div id="stats" class="stats">
+        <div class="card">Patients: <span id="statPatients">0</span></div>
+        <div class="card">Doctors: <span id="statDoctors">0</span></div>
+        <div class="card">Treatments: <span id="statTreatments">0</span></div>
+        <div class="card">Bills: <span id="statBills">0</span> (<span id="statUnpaid">0</span> unpaid)</div>
+        <div class="card">Appointments: <span id="statAppointments">0</span></div>
+      </div>
+    </section>
+
+    <!-- Patients -->
+    <section id="patients" class="section hidden">
+      <h2>Patients</h2>
+      <form id="patientForm">
+        <input type="text" id="pName" placeholder="Patient Name" required>
+        <input type="number" id="pAge" placeholder="Age" required>
+        <select id="pGender" required>
+          <option value="" selection hidden>Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="text" id="pPhone" placeholder="Phone" required>
+        <button type="submit">Add Patient</button>
+      </form>
+      <table id="patientTable">
+        <thead>
+          <tr><th>Name</th><th>Gender</th><th>Age</th><th>Phone</th><th>Actions</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Doctors -->
+    <section id="doctors" class="section hidden">
+      <h2>Doctors</h2>
+      <form id="doctorForm">
+        <input type="text" id="dName" placeholder="Doctor Name" required>
+        <input type="text" id="dSpec" placeholder="Specialization" required>
+        <button type="submit">Add Doctor</button>
+      </form>
+      <table id="doctorTable">
+        <thead><tr><th>Name</th><th>Specialization</th><th>Actions</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Treatments -->
+    <section id="treatments" class="section hidden">
+      <h2>Treatments</h2>
+      <form id="treatForm">
+        <input type="text" id="tpName" placeholder="Patient Name" required>
+        <input type="text" id="tName" placeholder="Treatment Name" required>
+        <input type="number" id="tCost" placeholder="Cost" required>
+        <button type="submit">Add Treatment</button>
+      </form>
+      <table id="treatTable">
+        <thead><tr><th>Patient</th><th>Treatment</th><th>Cost</th><th>Actions</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Billing -->
+    <section id="billing" class="section hidden">
+      <h2>Billing</h2>
+      <form id="billForm">
+        <input type="text" id="bPatient" placeholder="Patient Name" required>
+        <input type="number" id="bAmount" placeholder="Amount" required>
+        <button type="submit">Add Bill</button>
+      </form>
+      <table id="billTable">
+        <thead><tr><th>Patient</th><th>Amount</th><th>Status</th><th>Actions</th></tr></thead>
+        <tbody></tbody>
+      </table>
+    </section>
+
+    <!-- Appointments -->
+    <section id="appointments" class="section hidden">
+      <h2>Appointments</h2>
+      <form id="appointmentForm">
+        <input type="text" id="apptPatient" placeholder="Patient Name" required>
+        <input type="number" id="apptAge" placeholder="Age" required>
+        <select id="apptGender" required>
+          <option value="" >Select Gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+        <input type="text" id="apptPhone" placeholder="Patient Phone" required>
+        <select id="apptDoctor"></select>
+        <input type="datetime-local" id="apptDate" required>
+        <button type="submit">Add Appointment</button>
+      </form>
+      <table id="appointmentTable">
+        <thead>
+          <tr>
+            <th>Patient</th><th>Gender</th><th>Age</th><th>Phone</th>
+            <th>Doctor</th><th>Date</th><th>Status</th><th>Actions</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <p>All records are saved in your browser (localStorage).</p>
+  </footer>
+
+  <script src="nri.js"></script>
+</body>
+</html>
